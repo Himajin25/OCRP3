@@ -80,12 +80,7 @@ class Treasure(pg.sprite.Sprite):
         self.groups = game.all_sprites, game.treasures
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        #self.image = game.image
         self.image = image
-        # self.image = game.seringue_img
-        # self.image = game.needle_img
-        # self.image = game.tube_img
-        
         self.rect = self.image.get_rect()
 
         self.x = x
@@ -95,24 +90,6 @@ class Treasure(pg.sprite.Sprite):
     def update(self):
         self.rect.x = self.x * TILESIZE
         self.rect.y = self.y * TILESIZE
-        
-        # if self.image == "seringue":
-        #     Treasure(self, game.seringue_img, game.treasloc["needle"][0], game.treasloc["needle"][1])
-        # if self.image == "needle":
-        #     Treasure(self, game.needle_img, game.treasloc["needle"][0], game.treasloc["needle"][1])
-        # if self.image == "tube":
-        #     Treasure(self, game.tube_img, game.treasloc["needle"][0], game.treasloc["needle"][1])
-
-
-    # def treasureimg (self):
-    #     if self.image == SERINGUE_IMG:
-    #         return game.seringue_img
-    #     if self.image == NEEDLE_IMG:
-    #         return game.needle_img
-    #     if self.image == TUBE_IMG:
-    #         return game.tube_img
-
-
 
 #removal af treasure post capture
     def gotTreasure(self):

@@ -25,27 +25,18 @@ class Game:
         img_folder = path.join(game_folder, 'images')
         map_folder = path.join(game_folder, 'maps')
         self.map = Map(path.join(map_folder, "map1.txt"))
-        #treasures_files = path.join(img_folder, "seringue.png", "needle.png", "tube.png")
-        #self.map = TiledMap(path.join(map_folder, 'level1.tmx'))
-        #self.map_img = self.map.make_map()
-        #self.map.rect = self.map_img.get_rect()
         self.player_img = pg.image.load(path.join(img_folder, PLAYER_IMG)).convert_alpha()
         self.player_img = pg.transform.scale(self.player_img, (TILESIZE, TILESIZE))
         self.mob_img = pg.image.load(path.join(img_folder, MOB_IMG)).convert_alpha()
         self.mob_img = pg.transform.scale(self.mob_img, (TILESIZE, TILESIZE))
-        #self.treasure_img = pg.image.load(path.join(img_folder, SERINGUE_IMG, NEEDLE_IMG, TUBE_IMG)).convert_alpha()
         self.seringue_img = pg.image.load(path.join(img_folder, SERINGUE_IMG)).convert()
         self.seringue_img = pg.transform.scale(self.seringue_img, (TILESIZE, TILESIZE))
         self.seringue_img.set_colorkey(WHITE)
         self.needle_img = pg.image.load(path.join(img_folder, NEEDLE_IMG)).convert_alpha()
         self.needle_img = pg.transform.scale(self.needle_img, (TILESIZE, TILESIZE))
-        #return self.needle_img
         self.tube_img = pg.image.load(path.join(img_folder, TUBE_IMG)).convert()
         self.tube_img = pg.transform.scale(self.tube_img, (TILESIZE, TILESIZE))
         self.tube_img.set_colorkey(WHITE)
-        #self.treasures_img = [self.seringue_img, self.needle_img, self.tube_img]
-        #self.wall_img = pg.image.load(path.join(img_folder, WALL_IMG)).convert_alpha()
-        #self.wall_img = pg.transform.scale(self.wall_img, (TILESIZE, TILESIZE))
         self.spritesheet = Spritesheet(path.join(img_folder, SPRITESHEET))
 #game loop
     def run(self):
@@ -66,14 +57,11 @@ class Game:
         for row, tiles in enumerate(self.map.data):
             for col, tile in enumerate(tiles):
                 if tile == "#":
-                    Wall(self, col, row)
-                    #print(x,y)
+                    Wall(self, col, row)  
                 if tile == "P":
-                    self.player = Player(self, col, row)
-                    #print(x,y)
+                    self.player = Player(self, col, row)                   
                 if tile == "M":
-                    self.mob = Mob(self, col, row)
-                    #print(x,y)
+                    self.mob = Mob(self, col, row)                 
                 if tile == "_":
                     self.treasok = col, row
                     self.free.append(self.treasok)
