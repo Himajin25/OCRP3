@@ -60,8 +60,6 @@ class Wall(pg.sprite.Sprite):
         self.rect.x = x * TILESIZE
         self.rect.y = y * TILESIZE
 
-#treasures
-
 
 class Mob(pg.sprite.Sprite):
     def __init__(self, game, x, y):
@@ -82,7 +80,6 @@ class Treasure(pg.sprite.Sprite):
         self.game = game
         self.image = image
         self.rect = self.image.get_rect()
-
         self.x = x
         self.y = y
         
@@ -100,6 +97,3 @@ class Treasure(pg.sprite.Sprite):
                 self.treasloc.pop("treasure")
                 print(self.treasloc)
     
-    def removeTreasure(self):
-        if gotTreasure():
-            pass

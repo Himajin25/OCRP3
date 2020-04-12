@@ -65,21 +65,16 @@ class Game:
                 if tile == "_":
                     self.treasok = col, row
                     self.free.append(self.treasok)
-        print(self.free)
         self.treascoo = rd.sample(self.free, 3)
-        print(self.treascoo)
+        
         self.treaslist = ["seringue", "needle", "tube"]
 
         self.treasloc = {k:v for k, v in zip(self.treaslist, self.treascoo)}
-        print(self.treasloc)
-        
 
         self.seringue = Treasure(self, self.seringue_img, self.treasloc["seringue"][0], self.treasloc["seringue"][1])
         self.needle = Treasure(self, self.needle_img, self.treasloc["needle"][0], self.treasloc["needle"][1])
         self.tube = Treasure(self, self.tube_img, self.treasloc["tube"][0], self.treasloc["tube"][1])
-        
-
-                
+                    
         self.run()
         
 #game update

@@ -1,1 +1,4 @@
-C:\Users\ncb\DEV\Python\Pygame\OCR_P3\venv
+venv/
+__pycache__/
+.vscode/
+.git/

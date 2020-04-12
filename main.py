@@ -12,5 +12,5 @@ g = Game()
 while g.running:
     g.new()
     g.run()
-
+    
 pg.quit()
