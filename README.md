@@ -11,7 +11,7 @@ The game environment is a maze. MacGyver only way out is by collecting three ite
 GAMEPLAY
 MacGyver can be directed using your keyboard arrow keys.
 
-maze
+MAZE
 Maze can easily be tweaked by modifying the "map1.txt" file in the "maps/" folder as follows: "#" for walls "_" for free tiles "P" is Macgyer "G" is guardian note: items will automatically be generated on available free tiles
 
 Enjoy
