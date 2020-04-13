@@ -5,12 +5,12 @@ from os import path
 from game import *
 from sprites import *
 from settings import *
+""" This is the main loop to run the game """
 
-
+# create instance of game object
 g = Game()
 
 while g.running:
-    g.new()
-    g.run()
-    
+    g.new()  # start a new game
+
 pg.quit()
